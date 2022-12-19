@@ -1,10 +1,9 @@
 package br.com.newgo.spring.shopng.dtos;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter

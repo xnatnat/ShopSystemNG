@@ -4,10 +4,10 @@ import br.com.newgo.spring.shopng.dtos.CreateUserDto;
 import br.com.newgo.spring.shopng.dtos.UserDto;
 import br.com.newgo.spring.shopng.models.User;
 import br.com.newgo.spring.shopng.repositories.UserRepository;
-import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 import java.util.UUID;
 @Service
@@ -36,5 +36,9 @@ public class UserService {
     @Transactional
     public void delete(UserDto userDto){
         userRepository.deleteByEmail(userDto.getEmail());
+    }
+
+    public boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
     }
 }

@@ -10,19 +10,19 @@ import br.com.newgo.spring.shopng.services.ProductListService;
 import br.com.newgo.spring.shopng.services.ProductService;
 import br.com.newgo.spring.shopng.services.ShopListService;
 import br.com.newgo.spring.shopng.services.UserService;
-import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.*;
 
 @RestController
-@RequestMapping("/api/v1/ShopList")
+@RequestMapping("/api/v1/ShopLists")
 public class ShopListController {
     final ShopListService shopListService;
     final UserService userService;

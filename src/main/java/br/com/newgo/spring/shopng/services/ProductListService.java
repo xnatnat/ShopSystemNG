@@ -2,8 +2,9 @@ package br.com.newgo.spring.shopng.services;
 
 import br.com.newgo.spring.shopng.models.ProductList;
 import br.com.newgo.spring.shopng.repositories.ProductListRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 @Service
 public class ProductListService {

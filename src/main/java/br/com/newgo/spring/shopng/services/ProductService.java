@@ -2,9 +2,9 @@ package br.com.newgo.spring.shopng.services;
 
 import br.com.newgo.spring.shopng.models.Product;
 import br.com.newgo.spring.shopng.repositories.ProductRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

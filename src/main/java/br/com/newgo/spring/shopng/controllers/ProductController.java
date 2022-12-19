@@ -4,8 +4,6 @@ import br.com.newgo.spring.shopng.dtos.ProductDto;
 import br.com.newgo.spring.shopng.models.Product;
 import br.com.newgo.spring.shopng.services.ProductService;
 import br.com.newgo.spring.shopng.storage.Disk;
-import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,12 +11,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/product")
+@RequestMapping("/api/v1/products")
 public class ProductController {
     final ProductService productService;
     final Disk disk;

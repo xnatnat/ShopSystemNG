@@ -14,31 +14,31 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 
 /* Classe criada para utilizar o spring security 5.7 */
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class SecurityConfigV2 {
-
-    @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-                .httpBasic()
-                .and()
-                .authorizeHttpRequests()
-                .requestMatchers(HttpMethod.GET, "/api/v1/**").permitAll()
-                .requestMatchers("/api/v1/product").hasRole("ADMIN")
-                .requestMatchers("/api/v1/shopList").hasRole("USER")
-                .anyRequest().authenticated()
-                .and()
-                .addFilterBefore(new LoginFilter("/login", authenticationManager()),	UsernamePasswordAuthenticationFilter.class)
-                .addFilterBefore(new AuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-                .csrf().disable();
-        return httpSecurity.build();
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder(AuthenticationManagerBuilder auth) {
-        auth.userDetailsService(userDetailsService)
-                    .passwordEncoder(new BCryptPasswordEncoder());
-
-    }
+//
+////    @Bean
+//    SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+//        httpSecurity
+//                .httpBasic()
+//                .and()
+//                .authorizeHttpRequests()
+//                .requestMatchers(HttpMethod.GET, "/api/v1/**").permitAll()
+//                .requestMatchers("/api/v1/product").hasRole("ADMIN")
+//                .requestMatchers("/api/v1/shopList").hasRole("USER")
+//                .anyRequest().authenticated()
+//                .and()
+//                .addFilterBefore(new LoginFilter("/login", authenticationManager()),	UsernamePasswordAuthenticationFilter.class)
+//                .addFilterBefore(new AuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+//                .csrf().disable();
+//        return httpSecurity.build();
+//    }
+//
+////    @Bean
+//    public PasswordEncoder passwordEncoder(AuthenticationManagerBuilder auth) {
+//        auth.userDetailsService(userDetailsService)
+//                    .passwordEncoder(new BCryptPasswordEncoder());
+//
+//    }
 }

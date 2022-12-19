@@ -2,11 +2,11 @@ package br.com.newgo.spring.shopng.services.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Collections;
 import java.util.Date;
 
@@ -41,6 +41,11 @@ public class AuthenticationService {
         res.addHeader("Access-Control-Expose-Headers", "Authorization");
     }
 
+    /**
+     *  Verifica token obtido através da requisição http
+     * @param request
+     * @return
+     */
     static public Authentication getAuthentication(HttpServletRequest request){
         String token = request.getHeader("Authorization");
         if(token != null) {
